@@ -1,0 +1,254 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%; /* 10px = 1rem */
+    /* Primary colors */
+    --brand-green: rgb(0, 133, 111);
+    --brand-green-light: rgb(220, 233, 226);
+    --brand-green-light-02: rgb(220, 233, 226);
+    --brand-beige: rgb(255, 250, 241);
+    --brand-green-hover: rgb(0, 69, 58);
+    /* Secondary Colors */
+    --gray-headline: rgb(33, 37, 41);
+    --gray-paragraph: rgb(73, 80, 87);
+    --white: #3E3E3E;
+
+    --nav-height: 7.2rem;
+
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: 'DM Sans';
+    font-size: 1.6rem;
+    text-align: center;
+
+}
+
+.wrapper {
+    width: 37.5rem;
+    margin-inline: auto;
+    padding-inline: 2.4rem;
+}
+
+ul {
+    list-style: none;
+}
+
+/*  HEADER  */
+
+header {
+    margin-top: calc(4.1rem + var(--nav-height));
+}
+
+header::before {
+    content: "";
+    width: 100%;
+    height: calc(108rem + var(--nav-height)); 
+    background-color: var(--brand-green-light);
+    display: block;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    z-index: -1;
+
+}
+
+header h1 {
+    font-size: 3.4rem;
+    color: var(--gray-headline);
+    line-height: 130%;
+    margin-bottom: 2.4rem;
+}
+
+header h4 {
+    font-size: 1.4rem;
+    color: var(--brand-green);
+    margin-bottom: 1.6rem;
+}
+
+header p {
+    font-size: 1.8rem;
+    color: var(--gray-paragraph);
+    line-height: 150%;
+    margin-bottom: 3.2rem;
+
+}
+
+header button {
+    font-size: 1.4rem;
+    background-color: var(--brand-green);
+    text-transform: uppercase;
+    color: white;
+
+    margin: auto auto 6rem auto;
+    /* margin-bottom: 6rem;
+    margin-right: auto;
+    margin-left: auto; */
+    border: none;
+    border-radius: 4rem;
+    height: 6.2rem;
+    width: 26.3rem;
+    
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.6rem;    
+}
+
+header img {
+    width: 26.4rem;
+    display: block;
+    margin-inline: auto;
+
+    object-position: 0 2rem;
+}
+
+
+
+.stats{
+    width: 32.7rem;
+    /* height: 47rem; */
+    padding-block: 4rem; /* Propridade de padding para top e bottom */
+    margin-inline: auto; /* Margin do eixo X (Horizontal) */
+
+    background-color: var(--brand-beige);
+    border: 1px solid var(--brand-green-light);
+    border-radius: .6rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6rem;
+    
+}
+
+.stat h3 {
+    font-size: 4.8rem;
+    color: var(--gray-headline);
+    line-height: 130%;
+
+    margin-bottom: .4rem;
+}
+
+.stat p {
+    margin: 0;
+    color: var(--brand-green);
+    font-size: 1.6rem;
+    line-height: 150%;
+}
+
+/* NAV */
+
+nav {
+    display: flex;    
+    height: var(--nav-height);
+    padding: 1.6rem 2.4rem;
+    /*padding-inline: 2.4rem;
+    padding-block: 1.6rem;*/
+
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+nav .wrapper {
+    display: flex;
+    align-items: center;       
+    justify-content: space-between;
+}
+
+nav.scroll {
+    background-color: var(--brand-green);
+    width: 100vw;
+}
+
+nav.scroll svg:nth-child(1) path{
+    fill: white;
+}
+
+nav.scroll svg:nth-child(2) path{
+    stroke: white;
+}
+
+/* Expanded menu */
+
+body.menu-expanded {
+    overflow: hidden;
+}
+.menu,
+.close-menu,
+body.menu-expanded .open-menu {
+    opacity: 0;
+    visibility: hidden;
+}
+
+body.menu-expanded .menu,
+body.menu-expanded .close-menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+body.menu-expanded .menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: var(--brand-green);
+
+    width: 100vw;
+    height: 100vh;
+}
+
+body.menu-expanded nav {
+    position: relative;
+}
+
+.menu ul:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+    gap: 4.8rem;
+    margin-top: 6rem;
+    font-weight: 700;
+    font-size: 2.4rem;
+    line-height: 3.1rem;
+    color: white;
+}
+
+.menu ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.menu .button {
+    background: white;
+    color: var(--brand-green);
+    font-weight: 700;
+    font-size: 1.8rem;
+    line-height: 2.3rem;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    display: inline-block;
+
+    border-radius: 4rem;
+    padding: 1.6rem 3.2rem;
+    margin: 4.8rem auto 8rem; /* margin-top: 4.8rem; margin-bottom: 8rem; */
+}
+
+.social-links {
+    display: flex;
+    gap: 3.2rem;
+    align-items: center;
+    justify-content: center;
+}
